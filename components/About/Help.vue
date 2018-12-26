@@ -27,9 +27,7 @@
 
 <style scoped>
   .help {
-    margin-top: 100px;
-    background-color: #fff;
-    padding: 100px 0;
+    padding: 120px 0 50px;
   }
 
 

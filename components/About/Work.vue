@@ -1,6 +1,6 @@
 <template>
   <div class="work">
-    <b-container>
+    <b-container >
       <b-row>
         <b-col cols="12" sm="12" md="12" lg="4" v-for="work in works" :key="work.title">
           <div class="h3" v-html="work.title"></div>
@@ -9,6 +9,10 @@
 
         <b-col>
 
+        </b-col>
+
+        <b-col cols="12" class="text-center work-h1">
+          <div class="text-shadow">Let our work do the talking</div>
         </b-col>
       </b-row>
     </b-container>
@@ -33,6 +37,24 @@
 <style scoped>
   .work {
     margin-top: 100px;
-    padding: 50px 45px 0;
+    padding: 100px 0;
+    background-color: #fff;
   }
+
+  .work-h1 {
+    padding-top: 120px;
+  }
+
+  /***************************
+      Media Queries
+***************************/
+@media only screen and (max-width: 400px) {
+  .h1 {
+    font-size: 30px;
+  }
+
+  .work {
+    text-align: center;
+  }
+}
 </style>

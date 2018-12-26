@@ -15,7 +15,7 @@
     all: unset;
     padding: 20px 70px;
     color: #fff;
-    background-color: #20716A;
+    background-image: linear-gradient(to right, #23A393, #369D5F);
   }
 
   .btn-success:hover,

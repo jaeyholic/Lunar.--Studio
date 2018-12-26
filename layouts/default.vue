@@ -81,4 +81,12 @@ a.nuxt-link-active::after {
   font-weight: 500;
   font-style: normal;
 }
+
+.text-shadow {
+  text-shadow: 5px 9px 0 rgba(0,0,0,.15);
+  font-size: 45px;
+  font-family: futura-pt-bold, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
 </style>

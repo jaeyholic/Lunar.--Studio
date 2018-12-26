@@ -3,7 +3,7 @@
     <b-container class="text-center">
       <b-row>
         <b-col cols="12">
-          <p>@2019. Lunar Stuido. All rights reserved. Made with ❤️.</p>
+          <p>Copyright ©2019. Lunar Stuido. All rights reserved. Made with ❤️.</p>
         </b-col>
       </b-row>
     </b-container>
@@ -18,7 +18,7 @@
 
 <style scoped>
   .footer {
-    /* padding-top: 80px; */
+    padding: 40px 0 20px;
     font-size: 12px;
   }
 </style>
