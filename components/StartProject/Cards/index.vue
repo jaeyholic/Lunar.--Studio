@@ -1,33 +1,26 @@
 <template>
-  <div>
-    <b-row>
-      <b-col cols="12">
-        <b-card
-          tag="article"
-          style="max-width: 10rem;"
-          class="mb-2 p-2"
-          @click="updateOrder">
-          <p :class="['card-text', 'text-center', card]">
-           <span :class="['img', 'caret', 'pb-4']">
-             <img src="~assets/svg/success.svg">
-           </span>
-            <span :class="[img, image]"></span>
-            {{ name }}
-          </p>
-        </b-card>
-      </b-col>
-    </b-row>
-  </div>
+  <b-row>
+    <b-col cols="2">
+      <b-card
+        tag="article"
+        style="max-width: 10rem;"
+        :class="['mb-2', 'p-2', bgColor]"
+        @click="updateOrder">
+        <p :class="['card-text', 'text-center', card]">
+          <span :class="['img', 'caret']" v-if="this.activeOrder === this.name">
+            <img src="~assets/svg/success.svg">
+          </span>
+          <span :class="[img, image, 'mt-5']"></span>
+          {{ name }}
+        </p>
+      </b-card>
+    </b-col>
+  </b-row>
 </template>
 
 <script>
   export default {
-    props: ['name', 'img', 'image', 'caret', 'card', 'activeOrder'],
-    data() {
-      return {
-
-      }
-    },
+    props: ['name', 'img', 'image', 'caret', 'card', 'bgColor', 'activeOrder'],
     methods: {
       updateOrder() {
         this.$emit('updateOrder', this.name)
@@ -40,10 +33,6 @@
 .card:hover {
   cursor: pointer;
   border-color:rgba(54, 157, 95, 0.384);
-}
-
-.card:focus {
-  border-color: rgb(54, 157, 95);
 }
 
 /***********************
@@ -64,6 +53,34 @@
   height: 50px;
   margin-bottom: 15px;
   background-position: center;
+}
+
+
+/***********************
+  Card Border Colors
+***********************/
+.card .bgColor-1 {
+  border-color: #FC490B;
+}
+
+.card .bgColor-2 {
+  border-color: #2170A6;
+}
+
+.card .bgColor-3 {
+  border-color: #01579B;
+}
+
+.card .bgColor-4 {
+  border-color: #FFC107;
+}
+
+.card .bgColor-5{
+  border-color: #7CB342;
+}
+
+.card .bgColor-6 {
+  border-color: #FF4081;
 }
 
 .card:hover .img-1,
@@ -158,8 +175,5 @@
   color: #FF4081;
 }
 
-/* .card-text {
-  font-size: 20px;
-  font-weight: 700;
-} */
+
 </style>

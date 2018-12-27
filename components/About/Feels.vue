@@ -3,7 +3,7 @@
      <b-container>
     <b-row>
       <b-col cols="12" md="12" sm="12" lg="6">
-
+        <img src="~assets/svg/feels.svg" alt="">
       </b-col>
 
       <b-col cols="12" md="12" sm="12" lg="6">
