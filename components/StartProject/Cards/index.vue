@@ -1,26 +1,29 @@
 <template>
-  <b-row>
-    <b-col cols="2">
-      <b-card
-        tag="article"
-        style="max-width: 10rem;"
-        :class="['mb-2', 'p-2', bgColor]"
-        @click="updateOrder">
-        <p :class="['card-text', 'text-center', card]">
-          <span :class="['img', 'caret']" v-if="this.activeOrder === this.name">
-            <img src="~assets/svg/success.svg">
-          </span>
-          <span :class="[img, image, 'mt-5']"></span>
-          {{ name }}
-        </p>
-      </b-card>
-    </b-col>
-  </b-row>
+  <b-card
+    tag="article"
+    style="max-width: 12rem;"
+    class="mb-3"
+    :class="bgcolor"
+    @click="updateOrder">
+    <p :class="['card-text', 'text-center']">
+      <span :class="[img, 'caret', 'm-0', 'p-0']"
+      v-if="this.activeOrder === this.name">
+        <img src="~assets/svg/success.svg">
+      </span>
+      <span :class="[img, image, 'mt-3']"></span>
+      {{ name }}
+    </p>
+  </b-card>
 </template>
 
 <script>
   export default {
-    props: ['name', 'img', 'image', 'caret', 'card', 'bgColor', 'activeOrder'],
+    props: ['name', 'img', 'image', 'caret', 'card', 'bgcolor', 'imgchanger', 'activeOrder'],
+    data(){
+      return {
+
+      }
+    },
     methods: {
       updateOrder() {
         this.$emit('updateOrder', this.name)
@@ -49,9 +52,9 @@
 .img-5,
 .img-6 {
   background-repeat: no-repeat;
-  background-size: 50px;
-  height: 50px;
-  margin-bottom: 15px;
+  background-size: 40px;
+  height: 40px;
+  margin-bottom: 10px;
   background-position: center;
 }
 
@@ -59,27 +62,26 @@
 /***********************
   Card Border Colors
 ***********************/
-.card .bgColor-1 {
+.bgcolor-1 {
   border-color: #FC490B;
 }
 
-.card .bgColor-2 {
+.bgcolor-2 {
   border-color: #2170A6;
 }
 
-.card .bgColor-3 {
+.bgcolor-3 {
   border-color: #01579B;
 }
 
-.card .bgColor-4 {
+.bgcolor-4 {
   border-color: #FFC107;
 }
-
-.card .bgColor-5{
+.bgcolor-5{
   border-color: #7CB342;
 }
 
-.card .bgColor-6 {
+.bgcolor-6 {
   border-color: #FF4081;
 }
 
@@ -90,9 +92,9 @@
 .card:hover .img-5,
 .card:hover .img-6 {
   background-repeat: no-repeat;
-  background-size: 50px;
-  height: 50px;
-  margin-bottom: 15px;
+  background-size: 40px;
+  height: 40px;
+  margin-bottom: 10px;
 }
 
 .caret img {
@@ -103,7 +105,7 @@
   background-image: url('~assets/svg/cards/html-dark.svg');
 }
 
-.card:hover .img-1 {
+.img-1 {
   background-image: url('~assets/svg/cards/html-color.svg');
 }
 
@@ -111,7 +113,7 @@
   background-image: url('~assets/svg/cards/php-dark.svg');
 }
 
-.card:hover .img-2 {
+.img-2-2 {
   background-image: url('~assets/svg/cards/php-color.svg');
 }
 
@@ -119,7 +121,7 @@
   background-image: url('~assets/svg/cards/wordpress-dark.svg');
 }
 
-.card:hover .img-3 {
+.img-3-3 {
   background-image: url('~assets/svg/cards/wordpress-color.svg');
 }
 
@@ -127,7 +129,7 @@
   background-image: url('~assets/svg/cards/web-dark.svg');
 }
 
-.card:hover .img-4 {
+.img-4-4 {
   background-image: url('~assets/svg/cards/web-color.svg');
 }
 
@@ -135,7 +137,7 @@
   background-image: url('~assets/svg/cards/android-dark.svg');
 }
 
-.card:hover .img-5 {
+.img-5-5 {
   background-image: url('~assets/svg/cards/android-color.svg');
 }
 
@@ -143,7 +145,7 @@
   background-image: url('~assets/svg/cards/design-dark.svg');
 }
 
-.card:hover .img-6 {
+.img-6-6 {
   background-image: url('~assets/svg/cards/design-color.svg');
 }
 

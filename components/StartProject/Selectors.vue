@@ -8,16 +8,23 @@
         </b-col>
       </b-row>
 
-      <Cards v-for="item in titles" :key="item.title"
+      <b-row>
+        <b-col cols="2">
+          <Cards v-for="item in titles" :key="item.title"
           :name="item.title"
           :img="item.img"
           :image="item.image"
           :caret="item.caret"
           :card="item.cardName"
-          :bgColor="item.color"
+          :bgcolor="item.color"
+          :imgchanger="item.imgChange"
           :active-order="activeOrder"
           @updateOrder="onUpdateOrder"/>
+
+        </b-col>
+      </b-row>
     </b-container>
+
     <input type="radio" id="one" value="One" v-model="picked">
     <label for="one">One</label>
     <br>
@@ -38,19 +45,19 @@ import Cards from './Cards'
       return {
         picked: '',
         titles: [
-          {title: 'HTML', img: 'img', image: 'img-1', caret: 'caret', cardName: 'card-p1', color: 'bgColor-1'},
-          {title: 'PHP', img: 'img', image: 'img-2', caret: 'caret', cardName: 'card-p2', color: 'bgColor-2'},
-          {title: 'WORDPRESS', img: 'img', image: 'img-3', caret: 'caret', cardName: 'card-p3', color: 'bgColor-3'},
-          {title: 'WEB APP', img: 'img', image: 'img-4', caret: 'caret', cardName: 'card-p4', color: 'bgColor-4'},
-          {title: 'MOBILE APP', img: 'img', image: 'img-5', caret: 'caret', cardName: 'card-p5', color: 'bgColor-5'},
-          {title: 'DESIGNS', img: 'img', image: 'img-6', caret: 'caret', cardName: 'card-p6', color: 'bgColor-6'}
+          {title: 'HTML', img: 'img', image: 'img-1', imgChange: 'img-1-1', caret: 'caret', cardName: 'card-p1', color: 'bgcolor-1'},
+          {title: 'PHP', img: 'img', image: 'img-2', imgChange: 'img-2-2', caret: 'caret', cardName: 'card-p2', color: 'bgcolor-2'},
+          {title: 'WORDPRESS', img: 'img', image: 'img-3', imgChange: 'img-3-3', caret: 'caret', cardName: 'card-p3', color: 'bgcolor-3'},
+          {title: 'WEB APP', img: 'img', image: 'img-4', imgChange: 'img-4-4', caret: 'caret', cardName: 'card-p4', color: 'bgcolor-4'},
+          {title: 'MOBILE APP', img: 'img', image: 'img-5', imgChange: 'img-5-5', caret: 'caret', cardName: 'card-p5', color: 'bgcolor-5'},
+          {title: 'DESIGNS', img: 'img', image: 'img-6', imgChange: 'img-6-6', caret: 'caret', cardName: 'card-p6', color: 'bgcolor-6'}
           ],
         activeOrder: ''
       }
     },
     methods: {
       onUpdateOrder(order) {
-        this.activeOrder = order;
+        this.activeOrder = order
       }
     }
   }
