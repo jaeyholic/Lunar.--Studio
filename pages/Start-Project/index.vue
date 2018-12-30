@@ -15,6 +15,6 @@ import Selectors from '~/components/StartProject/Selectors'
 
 <style scoped>
   .start-project {
-    padding-top: 150px;
+    padding-top: 100px;
   }
 </style>

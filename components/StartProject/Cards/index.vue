@@ -1,19 +1,21 @@
 <template>
-  <b-card
-    tag="article"
-    style="max-width: 12rem;"
-    class="mb-3"
-    :class="bgcolor"
-    @click="updateOrder">
-    <p :class="['card-text', 'text-center']">
-      <span :class="[img, 'caret', 'm-0', 'p-0']"
-      v-if="this.activeOrder === this.name">
-        <img src="~assets/svg/success.svg">
-      </span>
-      <span :class="[img, image, 'mt-3']"></span>
-      {{ name }}
-    </p>
-  </b-card>
+  <b-col cols="6" md="4" lg="2" sm="4">
+    <b-card
+      tag="article"
+      style="max-width: 10rem;"
+      class="mb-3"
+      :class="[this.activeOrder === this.name ? this.bgcolor : '']"
+      @click="updateOrder">
+      <p :class="['card-text', 'text-center', 'py-2',this.activeOrder === this.name ? this.card : '']">
+        <span :class="[img, 'caret']"
+        v-if="this.activeOrder === this.name">
+          <img src="~assets/svg/success.svg">
+        </span>
+        <span :class="[img, image, 'mt-4', 'p-0', this.activeOrder === this.name ? this.imgchanger : '']"></span>
+        {{ name }}
+      </p>
+    </b-card>
+  </b-col>
 </template>
 
 <script>
@@ -36,6 +38,10 @@
 .card:hover {
   cursor: pointer;
   border-color:rgba(54, 157, 95, 0.384);
+}
+
+.card-text {
+  position: relative;
 }
 
 /***********************
@@ -96,6 +102,11 @@
   height: 40px;
   margin-bottom: 10px;
 }
+.caret {
+  position: absolute;
+  left: 40%;
+  top: 0;
+}
 
 .caret img {
   height: 20px;
@@ -105,7 +116,7 @@
   background-image: url('~assets/svg/cards/html-dark.svg');
 }
 
-.img-1 {
+.img-1-1 {
   background-image: url('~assets/svg/cards/html-color.svg');
 }
 
@@ -153,27 +164,25 @@
 /***********************
   Card Hover Color
 ***********************/
-.card:hover .card-p1 {
+.card-p1 {
   color: #FC490B;
 }
 
-.card:hover .card-p2 {
+.card-p2 {
   color: #2170A6;
 }
-
-.card:hover .card-p3 {
+.card-p3 {
   color: #01579B;
 }
 
-.card:hover .card-p4 {
+.card-p4 {
   color: #FFC107;
 }
 
-.card:hover .card-p5 {
+.card-p5 {
   color: #7CB342;
 }
-
-.card:hover .card-p6 {
+.card-p6 {
   color: #FF4081;
 }
 

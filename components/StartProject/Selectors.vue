@@ -6,10 +6,7 @@
           <div class="h1 pb-2 text-center">Start Your Order</div>
           <p class="text-center pb-5">No upfront payment is required at this stage. We will get back to you in the fastest possible way.</p>
         </b-col>
-      </b-row>
 
-      <b-row>
-        <b-col cols="2">
           <Cards v-for="item in titles" :key="item.title"
           :name="item.title"
           :img="item.img"
@@ -20,9 +17,11 @@
           :imgchanger="item.imgChange"
           :active-order="activeOrder"
           @updateOrder="onUpdateOrder"/>
-
-        </b-col>
       </b-row>
+
+        <PageSelector
+        :imgcolor="this.titles.imgChange"
+        :titles="this.titles.title"/>
     </b-container>
 
     <input type="radio" id="one" value="One" v-model="picked">
@@ -37,9 +36,12 @@
 
 <script>
 import Cards from './Cards'
+import PageSelector from './PageSelector'
+
   export default {
     components: {
-      Cards
+      Cards,
+      PageSelector
     },
     data() {
       return {
