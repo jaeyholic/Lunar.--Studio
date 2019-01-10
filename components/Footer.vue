@@ -3,7 +3,7 @@
     <b-container class="text-center">
       <b-row>
         <b-col cols="12">
-          <p>Copyright ©2019. Lunar Stuido. All rights reserved. Made with ❤️.</p>
+          <p>Copyright © 2016 - {{ new Date().getFullYear()}}. Lunar Stuido. All rights reserved. Made with ❤️.</p>
         </b-col>
       </b-row>
     </b-container>
